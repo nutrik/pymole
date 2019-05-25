@@ -37,8 +37,9 @@ In order to install pyMOLE ... To be done ...
 Please cite this work if you use pyMOLE in your research and/or software.
 Citations are useful for the continued development and maintenance of
 the library.
-
-  Roman Nuterman
-  pyMOLE: Python Mimetic Operators Library Enhanced.
-  Physics of Ice, Climate and Earth Section at Niels Bohr Institute,
-  University of Copenhagen.
+<dl>
+  <dd>Roman Nuterman</dd>
+  <dd>pyMOLE: Python Mimetic Operators Library Enhanced.</dd>
+  <dd>Physics of Ice, Climate and Earth Section at Niels Bohr Institute,
+  University of Copenhagen.</dd>
+<dl>
