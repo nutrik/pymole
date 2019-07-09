@@ -1,9 +1,9 @@
 import numpy as np
-from .div import div
+from .div1D import div1D
 from scipy.sparse import spdiags
 
 
-def divNonUniform(k, ticks, dx=1.):
+def div1DNonUniform(k, ticks, dx=1.):
     """Computes a m+2 by m+1 one-dimensional non-uniform mimetic divergence
     operator
 
@@ -32,4 +32,4 @@ def divNonUniform(k, ticks, dx=1.):
 
 
 if __name__ == '__main__':
-    print(divNonUniform(2, np.array([0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.45]), 1))
+    print(div1DNonUniform(2, np.array([0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.45]), 1))

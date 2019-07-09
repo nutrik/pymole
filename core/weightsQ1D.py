@@ -1,9 +1,9 @@
 import numpy as np
 import scipy.sparse.linalg as sp
-from .div import div
+from .div1D import div1D
 
 
-def weightsQ(k, m, dx):
+def weightsQ1D(k, m, dx):
     """Computes the m+2 weights of Q
 
     Arguments:
@@ -15,7 +15,7 @@ def weightsQ(k, m, dx):
         :obj:`ndarray` containing weights of Q
     """
 
-    D = div(k, m, dx)
+    D = div1D(k, m, dx)
 
     b = np.append(np.insert(np.zeros((m-1, 1)), 0, -1), 1)  # RHS
 
@@ -25,4 +25,4 @@ def weightsQ(k, m, dx):
 
 
 if __name__ == '__main__':
-    print(weightsQ(4, 9, 1))
+    print(weightsQ1D(4, 9, 1))

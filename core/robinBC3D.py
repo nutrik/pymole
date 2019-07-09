@@ -1,6 +1,6 @@
 import numpy as np
 from scipy import sparse
-from robinBC import robinBC
+from .robinBC1D import robinBC1D
 
 
 def robinBC3D(k, m, dx, n, dy, o, dz, a, b):
@@ -25,9 +25,9 @@ def robinBC3D(k, m, dx, n, dy, o, dz, a, b):
     """
     1-D boundary operators along each dimension
     """
-    Bm = robinBC(k, m, dx, a, b)
-    Bn = robinBC(k, n, dy, a, b)
-    Bo = robinBC(k, o, dz, a, b)
+    Bm = robinBC1D(k, m, dx, a, b)
+    Bn = robinBC1D(k, n, dy, a, b)
+    Bo = robinBC1D(k, o, dz, a, b)
 
     Im = sparse.eye(m+2, dtype=np.float, format='csr')
 

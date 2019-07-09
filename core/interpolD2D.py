@@ -1,6 +1,6 @@
 import numpy as np
 from scipy import sparse
-from .interpolD import interpolD
+from .interpolD1D import interpolD1D
 from scipy.sparse import csr_matrix
 
 
@@ -17,8 +17,8 @@ def interpolD2D(m, n, c1, c2):
         :obj:`ndarray` containing coefficients of interpolator
     """
 
-    Ix = interpolD(m, c1)
-    Iy = interpolD(n, c2)
+    Ix = interpolD1D(m, c1)
+    Iy = interpolD1D(n, c2)
 
     Im = csr_matrix((m + 2, m), dtype=np.float)
     In = csr_matrix((n + 2, n), dtype=np.float)

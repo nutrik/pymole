@@ -1,6 +1,6 @@
 import numpy as np
 from scipy import sparse
-from .robinBC import robinBC
+from .robinBC1D import robinBC1D
 
 
 def robinBC2D(k, m, dx, n, dy, a, b):
@@ -20,8 +20,8 @@ def robinBC2D(k, m, dx, n, dy, a, b):
         :obj:`ndarray` containing discrete boundary operator of Robin's type
     """
 
-    Bm = robinBC(k, m, dx, a, b)
-    Bn = robinBC(k, n, dy, a, b)
+    Bm = robinBC1D(k, m, dx, a, b)
+    Bn = robinBC1D(k, n, dy, a, b)
 
     Im = sparse.eye(m+2, dtype=np.float, format='csr')
 

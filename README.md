@@ -2,7 +2,7 @@ pyMOLE: Python Mimetic Operators Library Enhanced
 ========================================
 
 
-1: Description
+Description
 --------------
 
 pyMOLE is a partial python port of [MOLE](https://github.com/jcorbino/mole) library
@@ -19,27 +19,14 @@ However the user may find useful previous publications such as
 in which similar operators are derived using a matrix analysis approach.
 
 
-2: Licensing
+Licensing
 ------------
 
 pyMOLE is distributed under MIT License, please refer to the
 LICENSE file for more information on this.
 
 
-3: Installation
+Installation
 ---------------
 
 In order to install pyMOLE ... To be done ...
-
-4: Citations
-------------
-
-Please cite this work if you use pyMOLE in your research and/or software.
-Citations are useful for the continued development and maintenance of
-the library.
-<dl>
-  <dd>Roman Nuterman</dd>
-  <dd>pyMOLE: Python Mimetic Operators Library Enhanced.</dd>
-  <dd>Physics of Ice, Climate and Earth Section at Niels Bohr Institute,
-  University of Copenhagen.</dd>
-<dl>

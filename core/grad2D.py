@@ -1,5 +1,5 @@
 import numpy as np
-from .grad import grad
+from .grad1D import grad1D
 from scipy import sparse
 from scipy.sparse import csr_matrix
 
@@ -18,8 +18,8 @@ def grad2D(k, m, dx, n, dy):
         :obj:`ndarray` containing discrete gradient operator
     """
 
-    Gx = grad(k, m, dx)
-    Gy = grad(k, n, dy)
+    Gx = grad1D(k, m, dx)
+    Gy = grad1D(k, n, dy)
 
     Im = csr_matrix((m + 2, m), dtype=np.float)
     In = csr_matrix((n + 2, n), dtype=np.float)

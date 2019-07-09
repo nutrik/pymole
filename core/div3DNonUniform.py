@@ -1,5 +1,5 @@
 import numpy as np
-from .divNonUniform import divNonUniform
+from .div1DNonUniform import div1DNonUniform
 from scipy import sparse
 from scipy.sparse import csr_matrix
 
@@ -17,9 +17,9 @@ def div3DNonUniform(k, xticks, yticks, zticks):
         :obj:`ndarray` containing discrete divergence operator
     """
 
-    Dx = divNonUniform(k, xticks)
-    Dy = divNonUniform(k, yticks)
-    Dz = divNonUniform(k, zticks)
+    Dx = div1DNonUniform(k, xticks)
+    Dy = div1DNonUniform(k, yticks)
+    Dz = div1DNonUniform(k, zticks)
 
     m = Dx.shape[0] - 2
     n = Dy.shape[0] - 2

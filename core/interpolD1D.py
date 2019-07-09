@@ -2,8 +2,8 @@ import numpy as np
 from scipy.sparse import csr_matrix
 
 
-def interpol(m, c):
-    """Computes a m+1 by m+2 one-dimensional interpolator of 2nd-order
+def interpolD1D(m, c):
+    """Computes a m+2 by m+1 one-dimensional interpolator of 2nd-order
 
     Arguments:
         m (int): Number of cells
@@ -19,8 +19,8 @@ def interpol(m, c):
     """
     Dimensions of I
     """
-    n_rows = m + 1
-    n_cols = m + 2
+    n_rows = m + 2
+    n_cols = m + 1
 
     I = csr_matrix((n_rows, n_cols), dtype=np.float)
 
@@ -30,10 +30,10 @@ def interpol(m, c):
     """
     Average between two continuous cells
     """
-    avg = np.array([c, 1.-c])
+    avg = np.array([c, 1.-c], dtype=np.float)
 
-    j = 1
-    for i in range(1, n_rows - 1):
+    j = 0
+    for i in range(1, n_cols):
         I[i, j:j+2] = avg
         j = j + 1
 
@@ -41,4 +41,4 @@ def interpol(m, c):
 
 
 if __name__ == '__main__':
-    print(interpol(5, 0.5).toarray())
+    print(interpolD1D(5, 0.5))
