@@ -1,5 +1,5 @@
 import numpy as np
-from .gradNonUniform import gradNonUniform
+from .grad1DNonUniform import grad1DNonUniform
 from scipy import sparse
 from scipy.sparse import csr_matrix
 
@@ -18,9 +18,9 @@ def grad3DNonUniform(k, xticks, yticks, zticks):
         :obj:`ndarray` containing discrete gradient operator
     """
 
-    Gx = gradNonUniform(k, xticks)
-    Gy = gradNonUniform(k, yticks)
-    Gz = gradNonUniform(k, zticks)
+    Gx = grad1DNonUniform(k, xticks)
+    Gy = grad1DNonUniform(k, yticks)
+    Gz = grad1DNonUniform(k, zticks)
 
     m = Gx.shape[0] - 1
     n = Gy.shape[0] - 1

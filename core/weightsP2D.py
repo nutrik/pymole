@@ -1,6 +1,6 @@
 import numpy as np
 from scipy import sparse
-from .weightsP import weightsP
+from .weightsP1D import weightsP1D
 
 
 def weightsP2D(k, m, dx, n, dy):
@@ -20,8 +20,8 @@ def weightsP2D(k, m, dx, n, dy):
     Im = sparse.eye(m, dtype=np.float, format='csr')
     In = sparse.eye(n, dtype=np.float, format='csr')
 
-    Pm = np.diag(weightsP(k, m, dx))
-    Pn = np.diag(weightsP(k, n, dy))
+    Pm = np.diag(weightsP1D(k, m, dx))
+    Pn = np.diag(weightsP1D(k, n, dy))
 
     return np.concatenate((sparse.kron(In, Pm, format='csr').diagonal(),
                            sparse.kron(Pn, Im, format='csr').diagonal()))

@@ -1,5 +1,5 @@
 import numpy as np
-from .div import div
+from .div1D import div1D
 from scipy import sparse
 from scipy.sparse import csr_matrix
 
@@ -28,9 +28,9 @@ def div3D(k, m, dx, n, dy, o, dz):
     In[1:n+1, :] = sparse.eye(n, n, dtype=np.float, format='csr')
     Io[1:o+1, :] = sparse.eye(o, o, dtype=np.float, format='csr')
 
-    Dx = div(k, m, dx)
-    Dy = div(k, n, dy)
-    Dz = div(k, o, dz)
+    Dx = div1D(k, m, dx)
+    Dy = div1D(k, n, dy)
+    Dz = div1D(k, o, dz)
 
     Sx = sparse.kron(sparse.kron(Io, In), Dx)
     Sy = sparse.kron(sparse.kron(Io, Dy), Im)

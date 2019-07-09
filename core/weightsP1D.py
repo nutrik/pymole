@@ -1,9 +1,9 @@
 import numpy as np
 import scipy.sparse.linalg as sp
-from .grad import grad
+from .grad1D import grad1D
 
 
-def weightsP(k, m, dx):
+def weightsP1D(k, m, dx):
     """ Computes the m+1 weights of P
 
     Arguments:
@@ -15,7 +15,7 @@ def weightsP(k, m, dx):
         :obj:`ndarray` containing weights of P
     """
 
-    G = grad(k, m, dx)
+    G = grad1D(k, m, dx)
 
     b = np.append(np.insert(np.zeros((m, 1)), 0, -1), 1)  # RHS
 
@@ -25,4 +25,4 @@ def weightsP(k, m, dx):
 
 
 if __name__ == '__main__':
-    print(weightsP(6, 12, 1))
+    print(weightsP1D(6, 12, 1))

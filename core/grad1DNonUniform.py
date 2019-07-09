@@ -1,9 +1,9 @@
 import numpy as np
-from .grad import grad
+from .grad1D import grad1D
 from scipy.sparse import spdiags
 
 
-def gradNonUniform(k, ticks, dx=1.):
+def grad1DNonUniform(k, ticks, dx=1.):
     """ Computes a m+1 by m+2 one-dimensional non-uniform mimetic gradient
     operator
 
@@ -33,7 +33,7 @@ def gradNonUniform(k, ticks, dx=1.):
 
 
 if __name__ == '__main__':
-    print(gradNonUniform(2,
+    print(grad1DNonUniform(2,
           np.array([0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.45]), 1))
-    print(gradNonUniform(4,
+    print(grad1DNonUniform(4,
           np.array([0, 0.1, 0.15, 0.2, 0.3, 0.4, 0.45, 0.5, 0.6, 0.65]), 1))

@@ -1,5 +1,5 @@
 import numpy as np
-from .div import div
+from .div1D import div1D
 from scipy import sparse
 from scipy.sparse import csr_matrix
 
@@ -18,8 +18,8 @@ def div2D(k, m, dx, n, dy):
         :obj:`ndarray` containing discrete divergence operator
     """
 
-    Dx = div(k, m, dx)
-    Dy = div(k, n, dy)
+    Dx = div1D(k, m, dx)
+    Dy = div1D(k, n, dy)
 
     Im = csr_matrix((m + 2, m), dtype=np.float)
     In = csr_matrix((n + 2, n), dtype=np.float)
@@ -35,5 +35,5 @@ def div2D(k, m, dx, n, dy):
 
 if __name__ == '__main__':
     print(div2D(2, 5, 1, 5, 1))
-    div(4, 9, 1)
-    div(6, 13, 1)
+    div2D(4, 9, 1)
+    div2D(6, 13, 1)
